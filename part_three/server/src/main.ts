@@ -1,8 +1,8 @@
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
-import { typeDefs } from "./schema";
-import { resolvers } from "./resolvers";
-import { TrackAPI } from "./datasources/track-api";
+import { ApolloServer } from "npm:@apollo/server";
+import { startStandaloneServer } from "npm:@apollo/server/standalone";
+import { typeDefs } from "./schema.ts";
+import { resolvers } from "./datasources/resolvers.ts";
+import { TrackAPI } from "./datasources/track-api.ts";
 
 async function startApolloServer() {
   const server = new ApolloServer({ typeDefs, resolvers });
