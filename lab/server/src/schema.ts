@@ -1,11 +1,14 @@
 import gql from "graphql-tag"
 
 export const typeDefs = gql`
+
   type Query {
     "Query to get tracks array for the homepage grid"
     tracksForHome: [Track!]!
     "Fetch a specific track, provided a track's ID"
     track(id: ID!): Track!
+    "Fetch a specific module, provided a module's ID"
+    module(id: ID!): Module!
   }
 
   "A track is a group of Modules that teaches about a specific topic"
@@ -45,5 +48,9 @@ export const typeDefs = gql`
     title: String!
     "The module's length in minutes"
     length: Int
+    "The module's text-based description, can be in markdown format. In case of a video, it will be the enriched transcript"
+    content: String
+    "The module's video url, for video-based modules"
+    videoUrl: String
   }
 `;
