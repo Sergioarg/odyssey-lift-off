@@ -36,7 +36,8 @@ const GET_TRACK = gql(`
  */
 const Track = () => {
   const { trackId = "" } = useParams();
-  const { loading, error, data } = useQuery(GET_TRACK, {
+  const { loading, error, data } = useQuery(
+    GET_TRACK, {
     variables: { trackId },
   });
 
